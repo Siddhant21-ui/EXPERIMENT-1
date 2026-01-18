@@ -1,16 +1,69 @@
-# React + Vite
+# Experiment 1 – State Management using Context API and Redux Toolkit
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📌 Aim
+To develop a React application that demonstrates state management using Context API for authentication and Redux Toolkit for product management with role-based access.
 
-Currently, two official plugins are available:
+## 🧠 Description
+This project is a simple React application created as part of the **Full Stack – 2** course.  
+It uses:
+- **Context API** to manage authentication state (login, logout, user role)
+- **Redux Toolkit** to manage product data
+- **Role-based UI** to show different features for admin and normal users
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠 Technologies Used
+- React (Vite)
+- Context API
+- Redux Toolkit
+- React Redux
+- JavaScript
 
-## React Compiler
+## 🗂 Project Structure
+src/
+│── components/
+│ ├── Login.jsx
+│ └── Dashboard.jsx
+│
+│── context/
+│ └── AuthContext.jsx
+│
+│── redux/
+│ ├── ProductSlice.js
+│ └── store.js
+│
+│── App.jsx
+│── main.jsx
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ⚙️ How the Experiment Works
 
-## Expanding the ESLint configuration
+### 1️⃣ Authentication using Context API
+- AuthContext stores:
+  - isLoggedIn
+  - userName
+  - role (admin or user)
+- Login and logout functions update global authentication state.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 2️⃣ Product Management using Redux Toolkit
+- Redux slice manages product list.
+- Actions available:
+  - Add product
+  - Remove product
+
+### 3️⃣ Role-Based Access
+- Admin user can add and remove products.
+- Normal user can only view products.
+- UI changes dynamically based on user role.
+
+## 🔐 Login Credentials
+
+### Admin Login
+- Email: `admin@example.com`
+- Password: `password`
+
+### Normal User Login
+- Email: `user@example.com` (or any email)
+- Password: `password`
+
+## ▶️ How to Run the Project
+```bash
+npm install
+npm run dev
